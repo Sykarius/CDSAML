@@ -267,8 +267,8 @@ def train():
         for g in ggrads:                                                        #plotting the gradients
             tf.summary.histogram("{} grad".format(g[1].name), g[0])
 
-        dis_opt = dis_optimizer.appy_gradients(dgrads)
-        gen_opt = gen_optimizer.appy_gradients(ggrads)
+        dis_opt = dis_optimizer.apply_gradients(dgrads)
+        gen_opt = gen_optimizer.apply_gradients(ggrads)
 
     
     merged = tf.summary.merge_all()
